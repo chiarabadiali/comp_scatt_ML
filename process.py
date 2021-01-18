@@ -105,10 +105,10 @@ def fake_pairs(raw_data_e, raw_data_p, events_tags, randomness, dx, N, allow_int
 
 
 
-def load_generate_data(dx, r=1):
+def load_generate_data(dx, file_n, r=1):
     pairs_classifier = []
     data_regression = []
-    for i in range(1, len(os.listdir("data/EVENTS/electrons"))):
+    for i in range(1, file_n)):
         electron_raw, photon_raw, events, events_tags = open_file_id(i)
         no_pairs = fake_pairs(electron_raw, photon_raw, events_tags, r, dx, N=len(events_tags))
         yes_pairs = events[:, :9]
@@ -117,11 +117,10 @@ def load_generate_data(dx, r=1):
             pairs_classifier.append(np.insert(data_row, 0, 0))
         for data_row in yes_pairs:
             pairs_classifier.append(np.insert(data_row, 0, 1))
-        break
     data_regression = np.array(data_regression)
     pairs_classifier= np.array(pairs_classifier)
 
-    return data_regression, pairs_classifier
+    return data_regression[0], pairs_classifier
 
 
 
