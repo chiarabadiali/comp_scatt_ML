@@ -107,6 +107,7 @@ def fake_pairs(raw_data_e, raw_data_p, events_tags, randomness, dx, N, allow_int
 
 def load_generate_data(dx, r=1):
     pairs_classifier = []
+    data_regression = []
     for i in range(1, len(os.listdir("data/EVENTS/electrons"))):
         electron_raw, photon_raw, events, events_tags = open_file_id(i)
         no_pairs = fake_pairs(electron_raw, photon_raw, events_tags, r, dx, N=len(events_tags))
