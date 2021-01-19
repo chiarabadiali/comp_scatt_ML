@@ -112,7 +112,8 @@ def load_generate_data(dx, file_n, r=1):
         electron_raw, photon_raw, events, events_tags = open_file_id(i)
         no_pairs = fake_pairs(electron_raw, photon_raw, events_tags, r, dx, N=len(events_tags))
         yes_pairs = events[:, :10]
-        data_regression.append(events)
+        for event in events:
+            data_regression.append(events)
         for data_row in no_pairs:
             pairs_classifier.append(np.insert(data_row, 0, 0))
         for data_row in yes_pairs:
@@ -120,7 +121,7 @@ def load_generate_data(dx, file_n, r=1):
     data_regression = np.array(data_regression)
     pairs_classifier= np.array(pairs_classifier)
 
-    return data_regression[0], pairs_classifier
+    return data_regression, pairs_classifier
 
 
 def savedata(data_save, name):
