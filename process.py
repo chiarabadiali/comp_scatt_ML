@@ -123,7 +123,11 @@ def load_generate_data(dx, file_n, r=1):
     return data_regression[0], pairs_classifier
 
 
+def savedata(data_save, name):
+    np.savetxt(name, data_save, delimiter=',')
 
+def loaddata(name):
+    return np.loadtxt(name, delimiter=',')
         
 
 
