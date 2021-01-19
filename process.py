@@ -113,7 +113,7 @@ def load_generate_data(dx, file_n, r=1):
         no_pairs = fake_pairs(electron_raw, photon_raw, events_tags, r, dx, N=len(events_tags))
         yes_pairs = events[:, :10]
         for event in events:
-            data_regression.append(events)
+            data_regression.append(event)
         for data_row in no_pairs:
             pairs_classifier.append(np.insert(data_row, 0, 0))
         for data_row in yes_pairs:
