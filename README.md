@@ -8,9 +8,4 @@ Classification Neural Network: [![Binder](https://mybinder.org/badge_logo.svg)](
 Regression Neural Network: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/chiarabadiali/comp_scatt_ML/main?filepath=Comp_Scatt_NeuralNetwork_Regression.ipynb)
 
 
-Logbook with some examples:
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/chiarabadiali/comp_scatt_ML/main?filepath=Logbook.ipynb)
-
-
-check ssh prova prova
+Logbook with some examples: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/chiarabadiali/comp_scatt_ML/main?filepath=Logbook.ipynb)
