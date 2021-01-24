@@ -109,6 +109,7 @@ def load_generate_data(dx, file_n, r=1):
     pairs_classifier = []
     data_regression = []
     for i in range(1, file_n):
+        print("Reading file {0}, progress {1}%".format(i, 100*i/file_n))
         electron_raw, photon_raw, events, events_tags = open_file_id(i)
         no_pairs = fake_pairs(electron_raw, photon_raw, events_tags, r, dx, N=len(events_tags))
         yes_pairs = events[:, :10]
