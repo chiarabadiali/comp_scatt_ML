@@ -5,3 +5,4 @@ tensorflow==2.4.0
 watermark==2.1.0
 matplotlib==3.3.3
 h5py==2.10.0
+progressbar==2.5
