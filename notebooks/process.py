@@ -2,6 +2,7 @@ import h5py
 import numpy as np
 import os
 import random
+import progressbar
 
 def open_raw(filepath):
     with h5py.File(filepath,'r') as f:
@@ -31,9 +32,9 @@ def open_events(filepath):
 
 def open_file_id(id_f):
     id_s = str(id_f).zfill(6)
-    path_events = "data/EVENTS/electrons/events-{}.h5".format(id_s) 
-    path_electr = "data/RAW/electrons/RAW-electrons-{}.h5".format(id_s) 
-    path_photon = "data/RAW/photons/RAW-photons-{}.h5".format(id_s) 
+    path_events = "raw/EVENTS/electrons/events-{}.h5".format(id_s) 
+    path_electr = "raw/RAW/electrons/RAW-electrons-{}.h5".format(id_s) 
+    path_photon = "raw/RAW/photons/RAW-photons-{}.h5".format(id_s) 
 
     raw_data_e = open_raw(path_electr)
     raw_data_p = open_raw(path_photon)
@@ -108,8 +109,12 @@ def fake_pairs(raw_data_e, raw_data_p, events_tags, randomness, dx, N, allow_int
 def load_generate_data(dx, file_n, r=1):
     pairs_classifier = []
     data_regression = []
+    bar = progressbar.ProgressBar(maxval=file_n,
+                              widgets=[progressbar.Bar('=', '[', ']'), ' ',
+                                       progressbar.Percentage(),
+                                       " of {0}".format(file_n)])
+    bar.start()
     for i in range(1, file_n):
-        print("Reading file {0}, progress {1}%".format(i, 100*i/file_n))
         electron_raw, photon_raw, events, events_tags = open_file_id(i)
         no_pairs = fake_pairs(electron_raw, photon_raw, events_tags, r, dx, N=len(events_tags))
         yes_pairs = events[:, :10]
@@ -119,8 +124,12 @@ def load_generate_data(dx, file_n, r=1):
             pairs_classifier.append(np.insert(data_row, 0, 0))
         for data_row in yes_pairs:
             pairs_classifier.append(np.insert(data_row, 0, 1))
+        savedata(np.array(data_regression) ,"raw_data_regr.csv")
+        savedata(np.array(pairs_classifier), "raw_data_clas.csv")
+        bar.update(i)
     data_regression = np.array(data_regression)
     pairs_classifier= np.array(pairs_classifier)
+    bar.finish()
 
     return data_regression, pairs_classifier
 
