@@ -5,7 +5,7 @@
 
 Classification Neural Network: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/chiarabadiali/comp_scatt_ML/main?filepath=notebooks\Comp_Scatt_NeuralNetwork_Classification.ipynb)
 
-Regression Neural Network: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/chiarabadiali/comp_scatt_ML/main?filepath=notebooks\Comp_Scatt_NeuralNetwork_Regression.ipynb)
+Regression Neural Network with final test: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/chiarabadiali/comp_scatt_ML/main?filepath=notebooks\Comp_Scatt_NeuralNetwork_Regression.ipynb)
 
 
 Logbook with some examples: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/chiarabadiali/comp_scatt_ML/main?filepath=notebooks\Logbook.ipynb)
