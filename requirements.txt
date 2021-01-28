@@ -6,3 +6,4 @@ watermark==2.1.0
 matplotlib==3.3.3
 h5py==2.10.0
 progressbar==2.5
+scipy==1.6.0
