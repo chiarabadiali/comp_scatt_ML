@@ -3,7 +3,7 @@
 ## Interactive Version here
 
 
-Classification Neural Network: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/chiarabadiali/comp_scatt_ML/main?filepath=notebooks\Comp_Scatt_NeuralNetwork_Classification.ipynb)
+Classification Neural Network: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/chiarabadiali/comp_scatt_ML/notebooks/main?filepath=Comp_Scatt_NeuralNetwork_Classification.ipynb)
 
 Regression Neural Network with final test: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/chiarabadiali/comp_scatt_ML/main?filepath=notebooks\Comp_Scatt_NeuralNetwork_Regression.ipynb)
 
