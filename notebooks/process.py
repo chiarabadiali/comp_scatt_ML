@@ -32,7 +32,7 @@ def open_events(filepath):
 
 def open_file_id(id_f):
     id_event = str(id_f).zfill(6)
-    id_raw = str(id_f-1).zfill(6)
+    id_raw = str(id_f).zfill(6)
     path_events = "raw/EVENTS/electrons/events-{}.h5".format(id_event) 
     path_electr = "raw/RAW/electrons/RAW-electrons-{}.h5".format(id_raw) 
     path_photon = "raw/RAW/photons/RAW-photons-{}.h5".format(id_raw) 
